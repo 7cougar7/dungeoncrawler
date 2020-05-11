@@ -20,7 +20,7 @@ class Tile{
         //Item item;
     public:
         Tile();
-        Tile(bool w, bool s, bool o, bool hE, bool hI, bool haz, bool light);
+        Tile(bool w, bool s, bool o, bool hE, bool hI, bool haz, bool l);
         ~Tile();
 
     bool getWalkable() {
