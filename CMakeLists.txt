@@ -3,6 +3,8 @@ project(dungeoncrawler)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DungeonCrawler main.cpp Tile.h)
-add_executable(Test Test.cpp Tile.cpp)
+add_executable(DungeonCrawler main.cpp)
+add_executable(Enemy Enemy.cpp)
 add_executable(Tile Tile.cpp)
+add_executable(Test Test.cpp Tile.cpp Enemy.cpp)
+

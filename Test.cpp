@@ -3,13 +3,18 @@
 //
 
 #include "Tile.h"
+#include "Enemy.h"
 #include <iostream>
 
 int main()
 {
     Tile tile;
-    tile = Tile();
-    double w = tile.getLight();
-    std::cout << w << std::endl;
-    return 0;
+        tile = Tile();
+        double w = tile.getLight();
+        std::cout << w << std::endl;
+
+    Enemy enemy;
+        int speed = enemy.getSpeed();
+        std::cout << speed;
+        return 0;
 }
