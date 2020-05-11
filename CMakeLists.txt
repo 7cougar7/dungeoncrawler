@@ -6,5 +6,8 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(DungeonCrawler main.cpp)
 add_executable(Enemy Enemy.cpp)
 add_executable(Tile Tile.cpp)
+add_executable(Item Item.cpp)
+add_executable(Weapon Weapon.cpp)
+
 add_executable(Test Test.cpp Tile.cpp Enemy.cpp)
 
