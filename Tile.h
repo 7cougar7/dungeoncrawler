@@ -1,9 +1,8 @@
 //
 // Created by 7cougar7 on 5/11/2020.
 //
+#pragma once
 
-#ifndef DUNGEONCRAWLER_TILE_H
-#define DUNGEONCRAWLER_TILE_H
 class Tile{
     protected:
         //FixMe
@@ -67,4 +66,4 @@ class Tile{
         }
 };
 
-#endif //DUNGEONCRAWLER_TILE_H
+

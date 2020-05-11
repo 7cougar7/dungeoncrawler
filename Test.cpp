@@ -7,13 +7,9 @@
 
 int main()
 {
-    Tile* tile;
-
-    tile = new Tile();
-
-    bool w = tile->getWalkable();
-
+    Tile tile;
+    tile = Tile();
+    double w = tile.getLight();
     std::cout << w << std::endl;
-
     return 0;
 }
