@@ -7,6 +7,7 @@ class Tile{
     protected:
         //FixMe
         //SomeDataType texture;
+        char symbol;
         bool walkable; //Able
         bool solid;
         bool occupied;
@@ -19,8 +20,15 @@ class Tile{
         //Item item;
     public:
         Tile();
-        Tile(bool w, bool s, bool o, bool hE, bool hI, bool haz, double light);
+        Tile(char sym, bool w, bool s, bool o, bool hE, bool hI, bool haz, double light);
         //~Tile();
+
+        char getSymbol() {
+            return symbol;
+        }
+        void setSymbol(char symbol) {
+            Tile::symbol = symbol;
+        }
 
         bool getWalkable() {
             return walkable;

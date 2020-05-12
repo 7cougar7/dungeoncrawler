@@ -6,6 +6,7 @@
 
 Tile::Tile()
 {
+    symbol = ' ';
     walkable = false;
     solid = false;
     occupied = false;
@@ -15,8 +16,9 @@ Tile::Tile()
     light = 0.0;
 }
 
-Tile::Tile(bool w, bool s, bool o, bool hE, bool hI, bool haz, double l)
+Tile::Tile(char sym, bool w, bool s, bool o, bool hE, bool hI, bool haz, double l)
 {
+    symbol = sym;
     walkable = w;
     solid = s;
     occupied = o;
