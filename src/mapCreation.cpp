@@ -15,8 +15,8 @@ const int possibleDirections[4][2] = {
         {0,1},
         {0,-1}
 };
-const int maxX = 20;
-const int maxY = 20;
+const int maxX = 50;
+const int maxY = 50;
 Tile *path = new Tile('@',true,true,false,false,false,false,1.0);
 
 std::vector<std::vector<Tile>> levelLayout(maxX ,std::vector<Tile> (maxY)); //Outside Vector(x), Inside Vector(y)
@@ -36,22 +36,17 @@ int createSquare(int size, int xCoord, int yCoord) {
     return 0;
 }
 
-//T = % through line
-double lerp(int start, int end, double T){
-    return start+(T*(end-start));
-}
-
 int createLine(int xStart, int yStart, int xEnd, int yEnd){
     if(xStart > maxX || yStart > maxY || xEnd > maxX || yEnd > maxY
         || xStart < 0 || yStart < 0 || xEnd < 0 || yEnd < 0){
             return 1;
     }
     if(xStart == xEnd){ //Vertical Line
-        for(int y = yStart; y<yEnd-yStart+2; y++){
+        for(int y = yStart; y<abs(yEnd-yStart)+2; y++){
             levelLayout[y][xStart] = *path;
         }
     } else if(yStart == yEnd){ //Horizontal Line
-        for(int x = xStart; x < xEnd-xStart+2; x++){
+        for(int x = xStart; x <abs(xEnd-xStart)+2; x++){
             levelLayout[yStart][x] = *path;
         }
     } else { //Diagonal Line
@@ -84,12 +79,8 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd){
 
 int main(){
     srand(time(NULL));
-    //levelLayout[0][0] = *path;
-    //createSquare(6,maxX/2-2,maxY/2-2);
-    createLine(1,1,10,16);
-//    if(createLine(1,1,5,1)){
-//        std::cout << "error";
-//    }
+    createSquare(6,maxX/2-2,maxY/2-2);
+    createLine(20,20,5,5);
     for (int x = maxY-1; x >= 0; x--) {
         for (int y = 0; y < maxX; y++){
             if(levelLayout[x][y].getSymbol() != '@'){
@@ -97,7 +88,6 @@ int main(){
             }else{
                 std::cout << levelLayout[x][y].getSymbol();
             }
-            //std::cout<< " ";
         }
         std::cout << "\n";
     }
