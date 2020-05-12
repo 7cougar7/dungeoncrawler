@@ -106,7 +106,7 @@ void connectRooms() {
     //FIXME
 }
 
-int initLevel() {
+int main() {
     srand(time(NULL));
     //createSquare(8,20,10);
     //while(1) {
