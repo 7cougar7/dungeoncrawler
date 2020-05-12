@@ -10,4 +10,5 @@ Enemy::Enemy(std::string n, std::string et, int s, int p, bool a, int h){
     speed = s;
     path = p;
     aware = a;
+    health = h;
 }
