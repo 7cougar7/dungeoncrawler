@@ -4,7 +4,7 @@
 
 #include "Enemy.h"
 
-Enemy::Enemy(std::string n, std::string et, int s, int p, bool a){
+Enemy::Enemy(std::string n, std::string et, int s, int p, bool a, int h){
     name = n;
     enemyTip = et;
     speed = s;
