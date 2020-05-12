@@ -70,7 +70,7 @@ build DungeonCrawler.exe: CXX_EXECUTABLE_LINKER__DungeonCrawler CMakeFiles\Dunge
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\7cougar7\Desktop\dungeoncrawler\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:\Users\7cougar7\Desktop\dungeoncrawler -BC:\Users\7cougar7\Desktop\dungeoncrawler\out\build\x64-Debug"
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Mark\Desktop\Dante's Crypt\out\build\x64-Debug" && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S"C:\Users\Mark\Desktop\Dante's Crypt" -B"C:\Users\Mark\Desktop\Dante's Crypt\out\build\x64-Debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -118,54 +118,11 @@ build Test.exe: CXX_EXECUTABLE_LINKER__Test CMakeFiles\Test.dir\Test.cpp.obj
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\7cougar7\Desktop\dungeoncrawler\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Mark\Desktop\Dante's Crypt\out\build\x64-Debug" && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build edit_cache: phony CMakeFiles\edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target mapCreation
-
-
-#############################################
-# Order-only phony target for mapCreation
-
-build cmake_object_order_depends_target_mapCreation: phony || CMakeFiles\mapCreation.dir
-
-build CMakeFiles\mapCreation.dir\mapCreation.cpp.obj: CXX_COMPILER__mapCreation ..\..\..\mapCreation.cpp || cmake_object_order_depends_target_mapCreation
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -std:c++14
-  OBJECT_DIR = CMakeFiles\mapCreation.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapCreation.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapCreation.dir\
-  TARGET_PDB = mapCreation.pdb
-
-build CMakeFiles\mapCreation.dir\Tile.cpp.obj: CXX_COMPILER__mapCreation ..\..\..\Tile.cpp || cmake_object_order_depends_target_mapCreation
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1   -std:c++14
-  OBJECT_DIR = CMakeFiles\mapCreation.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapCreation.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapCreation.dir\
-  TARGET_PDB = mapCreation.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target mapCreation
-
-
-#############################################
-# Link the executable mapCreation.exe
-
-build mapCreation.exe: CXX_EXECUTABLE_LINKER__mapCreation CMakeFiles\mapCreation.dir\mapCreation.cpp.obj CMakeFiles\mapCreation.dir\Tile.cpp.obj
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\mapCreation.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\mapCreation.dir\
-  TARGET_FILE = mapCreation.exe
-  TARGET_IMPLIB = mapCreation.lib
-  TARGET_PDB = mapCreation.pdb
 
 # =============================================================================
 # Target aliases.
@@ -174,17 +131,15 @@ build DungeonCrawler: phony DungeonCrawler.exe
 
 build Test: phony Test.exe
 
-build mapCreation: phony mapCreation.exe
-
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/7cougar7/Desktop/dungeoncrawler/out/build/x64-Debug
+# Folder: C:/Users/Mark/Desktop/Dante's Crypt/out/build/x64-Debug
 
-build all: phony DungeonCrawler.exe Test.exe mapCreation.exe
+build all: phony DungeonCrawler.exe Test.exe
 
 # =============================================================================
 # Built-in targets
