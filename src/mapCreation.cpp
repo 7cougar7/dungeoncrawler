@@ -39,20 +39,24 @@ int createSquare(int size, int xCoord, int yCoord) {
     return 1;
 }
 
-int createLine(int xStart, int yStart, int xEnd, int yEnd){
+int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness = 1){
     if(xStart > maxX || yStart > maxY || xEnd > maxX || yEnd > maxY
         || xStart < 0 || yStart < 0 || xEnd < 0 || yEnd < 0){
             return 1;
     }
     if(xStart == xEnd){ //Vertical Line
         for(int y = yStart; y<abs(yEnd-yStart)+2; y++){
-            levelLayout[y][xStart] = *path;
+            for (int t = 0; t < thickness; t++){
+                levelLayout[y][xStart + t] = *path;
+            }
         }
     } else if(yStart == yEnd){ //Horizontal Line
         for(int x = xStart; x <abs(xEnd-xStart)+2; x++){
-            levelLayout[yStart][x] = *path;
+            for(int t = 0; t < thickness; t++){
+                levelLayout[yStart + t][x] = *path;
+            }
         }
-    } else { //Diagonal Line
+    } else if (thickness == 1){ //Diagonal Line
         int xDis = xEnd-xStart;
         int yDis = yEnd-yStart;
         double xAbsDis = abs(xEnd-xStart);
@@ -65,7 +69,7 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd){
         int y = yStart;
         levelLayout[y][x] = *path;
         for (int ix = 0, iy = 0; ix < xAbsDis || iy < yAbsDis;) {
-            if ((0.5+ix) / xAbsDis < (0.5+iy) / yAbsDis) {
+            if ((0.5 + ix) / xAbsDis < (0.5 + iy) / yAbsDis) {
                 // next step is horizontal
                 x += xSign;
                 ix++;
@@ -76,7 +80,12 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd){
             }
             levelLayout[y][x] = *path;
         }
+    }else{
+        for (int t = 0; t < thickness; t++) {
+            createLine(xStart + t, yStart, xEnd + t, yEnd, 1);
+        }
     }
+
     return 0;
 }
 
@@ -98,7 +107,9 @@ int main(){
     //createSquare(8,20,10);
     //while(1) {
     //createRooms(5, 3, 7);
-    //createLine(20,20,5,5);
+    createLine(24,5,12,28, 3);
+    createLine(12, 2, 12, 9, 1);
+    createLine(2, 3, 8, 3);
         for (int x = maxY - 1; x >= 0; x--) {
             for (int y = 0; y < maxX; y++) {
                 if (levelLayout[x][y].getSymbol() != '@') {
