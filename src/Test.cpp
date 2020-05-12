@@ -21,5 +21,6 @@ int main()
      Consumables apple = Consumables(3, 0, "bruh", 3);
         int duration = apple.getDuration();
         std::cout << duration;
+
     return 0;
 }

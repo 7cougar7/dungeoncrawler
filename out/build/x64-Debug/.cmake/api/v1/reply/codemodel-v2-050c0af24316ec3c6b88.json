@@ -1,0 +1,104 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "dungeoncrawler",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DungeonCrawler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DungeonCrawler-Debug-c106bf0a823c13ca64f5.json",
+					"name" : "DungeonCrawler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Enemy::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Enemy-Debug-a06fc5d4f16f69f71684.json",
+					"name" : "Enemy",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Item::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Item-Debug-900cd32a7c61897381c6.json",
+					"name" : "Item",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Test-Debug-b32a8ebf28e37ed42fcd.json",
+					"name" : "Test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tile::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tile-Debug-258b31f92902a493898f.json",
+					"name" : "Tile",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Weapon::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Weapon-Debug-d3e0459ed1bafcad129b.json",
+					"name" : "Weapon",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/spide/Desktop/dungeoncrawler/out/build/x64-Debug",
+		"source" : "C:/Users/spide/Desktop/dungeoncrawler"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

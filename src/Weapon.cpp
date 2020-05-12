@@ -5,7 +5,7 @@
 #include <string>
 #include "Weapon.h"
 
-Weapon::Weapon()
+/*Weapon::Weapon()
 {
     damage = 0.0;
     damageType = "null";
@@ -20,3 +20,4 @@ Weapon::Weapon(float d, std::string dT, double cC, int r)
     critChance = cC;
     range = r;
 }
+*/

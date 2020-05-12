@@ -16,8 +16,9 @@ class Weapon : public Item
         double critChance; //0.0 - 0.1
         int range;
     public:
-        Weapon();
-        Weapon(float d, std::string dT, double cC, int r);
+        Weapon(std::string r = "null", std::string t = "null", std::string n = "null", float d = 0.0, std::string dT = "null", double cC = 0.0, int rng = 0)
+        : Item{r, t, n}
+        {}
 
         float getDamage(){return damage;}
         void setDamage(float damage) {Weapon::damage = damage;}
