@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/spide/Desktop/dungeoncrawler/src/Item.h
+string
+-
+
+C:/Users/spide/Desktop/dungeoncrawler/src/Weapon.cpp
+string
+-
+Weapon.h
+C:/Users/spide/Desktop/dungeoncrawler/src/Weapon.h
+
+C:/Users/spide/Desktop/dungeoncrawler/src/Weapon.h
+Item.h
+C:/Users/spide/Desktop/dungeoncrawler/src/Item.h
+
