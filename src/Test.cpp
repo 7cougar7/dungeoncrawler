@@ -4,6 +4,7 @@
 
 #include "Tile.h"
 #include "Enemy.h"
+#include "Consumables.h"
 #include <iostream>
 
 int main()
@@ -16,5 +17,9 @@ int main()
     Enemy enemy;
         int speed = enemy.getSpeed();
         std::cout << speed;
-        return 0;
+
+     Consumables apple = Consumables(3, 0, "bruh", 3);
+        int duration = apple.getDuration();
+        std::cout << duration;
+    return 0;
 }
