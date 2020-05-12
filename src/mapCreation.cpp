@@ -23,17 +23,20 @@ std::vector<std::vector<Tile>> levelLayout(maxX ,std::vector<Tile> (maxY)); //Ou
 
 //Size = length of each side
 //xCoord/yCoord = bottom left corner coordinates
-//Success = 0; Fail = 1
+//Success = 1; Fail = 0
 int createSquare(int size, int xCoord, int yCoord) {
     if(xCoord+size > maxX || yCoord+size > maxY || xCoord < 0 || yCoord < 0){
-        return 1;
+        return 0;
     }
+    int count = 0;
     for(int x = yCoord-1; x < yCoord+size-1; x++){
         for (int y = xCoord-1; y < xCoord+size-1; y++) {
             levelLayout[x][y] = *path;
+            count++;
         }
     }
-    return 0;
+    std::cout << count << std::endl;
+    return 1;
 }
 
 int createLine(int xStart, int yStart, int xEnd, int yEnd){
@@ -77,19 +80,35 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd){
     return 0;
 }
 
+void createRooms(int number, int minSize, int maxSize){
+    int i = 0;
+    while (i < number){
+       createSquare(rand()%(maxSize - minSize) + minSize, rand()%maxX, rand()%maxY);
+       i++;
+        }
+    }
+
+
+void connectRooms(){
+
+}
+
 int main(){
     srand(time(NULL));
-    createSquare(6,maxX/2-2,maxY/2-2);
-    createLine(20,20,5,5);
-    for (int x = maxY-1; x >= 0; x--) {
-        for (int y = 0; y < maxX; y++){
-            if(levelLayout[x][y].getSymbol() != '@'){
-                std::cout << "x";
-            }else{
-                std::cout << levelLayout[x][y].getSymbol();
+    //createSquare(8,20,10);
+    //while(1) {
+    //createRooms(5, 3, 7);
+    //createLine(20,20,5,5);
+        for (int x = maxY - 1; x >= 0; x--) {
+            for (int y = 0; y < maxX; y++) {
+                if (levelLayout[x][y].getSymbol() != '@') {
+                    std::cout << "x";
+                } else {
+                    std::cout << levelLayout[x][y].getSymbol();
+                }
             }
-        }
-        std::cout << "\n";
+            std::cout << "\n";
+        //}
     }
     return 0;
 };
