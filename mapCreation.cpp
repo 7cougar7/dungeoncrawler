@@ -80,12 +80,38 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness) {
     return 0;
 }
 
+void randomWalk(int startX, int startY, int steps) {
+    levelLayout[startY][startX] = *path;
+    int x = startX;
+    int y = startY;
+    for (int s = 0; s < steps; s++) {
+        int r = rand() % 4;
+        if (r == 0) { //move right
+            levelLayout[y][x++] = *path;
+        } //move left
+        else if (r == 1) {
+            levelLayout[y][x--] = *path;
+        }
+        else if (r == 2) { //move up
+            levelLayout[y++][x] = *path;
+        }
+        else { //move down
+            levelLayout[y--][x] = *path;
+        }
+    }
+}
+
 void createRooms(int number, int minSize, int maxSize) {
     int i = 0;
     while (i < number) {
         createSquare(rand() % (maxSize - minSize) + minSize, rand() % maxX, rand() % maxY);
         i++;
     }
+}
+
+//create central room, random walks to create rooms, add dead ends
+void createLayout() {
+    //FIXME
 }
 
 
@@ -98,9 +124,10 @@ int initLevel() {
     //createSquare(8,20,10);
     //while(1) {
     //createRooms(5, 3, 7);
-    createLine(24, 5, 12, 28, 3);
-    createLine(12, 2, 12, 9, 1);
-    createLine(2, 3, 8, 3, 1);
+    //createLine(24, 5, 12, 28, 3);
+    //createLine(12, 2, 12, 9, 1);
+    //createLine(2, 3, 8, 3, 1);
+    randomWalk(25, 25, 15);
     for (int x = maxY - 1; x >= 0; x--) {
         for (int y = 0; y < maxX; y++) {
             if (levelLayout[x][y].getSymbol() != '@') {
