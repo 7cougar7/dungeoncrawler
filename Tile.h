@@ -1,27 +1,36 @@
 //
 // Created by 7cougar7 on 5/11/2020.
 //
+#pragma once
 
-#ifndef DUNGEONCRAWLER_TILE_H
-#define DUNGEONCRAWLER_TILE_H
-class Tile{
-    protected:
-        //FixMe
-        //SomeDataType texture;
-        bool walkable; //Able
-        bool solid;
-        bool occupied;
-        bool hasEnemy;
-        bool hasItem;
-        bool hazard;
-        double light;
-        //FixMe
-        //Enemy enemy;
-        //Item item;
-    public:
-        Tile();
-        Tile(bool w, bool s, bool o, bool hE, bool hI, bool haz, bool light);
-        ~Tile();
+#include <iostream>
+
+class Tile {
+protected:
+    //FixMe
+    //SomeDataType texture;
+    char symbol;
+    bool walkable; //Able
+    bool solid;
+    bool occupied;
+    bool hasEnemy;
+    bool hasItem;
+    bool hazard;
+    double light;
+    //FixMe
+    //Enemy enemy;
+    //Item item;
+public:
+    Tile();
+    Tile(char sym, bool w, bool s, bool o, bool hE, bool hI, bool haz, double light);
+    //~Tile();
+
+    char getSymbol() {
+        return symbol;
+    }
+    void setSymbol(char symbol) {
+        Tile::symbol = symbol;
+    }
 
     bool getWalkable() {
         return walkable;
@@ -66,5 +75,3 @@ class Tile{
         Tile::light = light;
     }
 };
-
-#endif //DUNGEONCRAWLER_TILE_H
