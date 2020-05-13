@@ -198,7 +198,7 @@ void createLayout(int minSize, int maxSize) {
     randomWalk(hX, hY, randBetween(minSteps, 2 * hX), rand() % 4);
 }
 
-int main() {
+int initLevel() {
     srand(time(NULL));
     //createSquare(8,20,10);
     //while(1) {
