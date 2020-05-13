@@ -3,13 +3,9 @@ project(dungeoncrawler)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DungeonCrawler src/main.cpp)
-add_executable(Enemy src/Enemy.cpp)
-add_executable(Tile src/Tile.cpp)
-add_executable(Item src/Item.cpp)
-add_executable(Consumables src/Consumables.cpp)
-add_executable(Weapon src/Weapon.cpp)
-add_executable(mapCreation src/mapCreation.cpp src/Tile.cpp)
+add_executable(DungeonCrawler main.cpp Tile.cpp mapCreation.cpp)
+add_executable(Test Test.cpp)
+add_executable(mapCreation mapCreation.cpp Tile.cpp)
 
-add_executable(Test src/Test.cpp src/Tile.cpp src/Enemy.cpp src/Item.cpp src/Weapon.cpp src/Consumables.cpp src/mapCreation.cpp)
+add_executable(Engine Game.cpp main.cpp)
 
