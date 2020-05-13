@@ -1,0 +1,13 @@
+﻿  Dante's Crypt.cpp
+  Consumables.cpp
+  Enemy.cpp
+  Game.cpp
+  Item.cpp
+  main.cpp
+  mapCreation.cpp
+C:\Users\spide\Desktop\dungeoncrawler\mapCreation.cpp(97,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Test.cpp
+  Tile.cpp
+  Weapon.cpp
+  Generating Code...
+  Dante's Crypt.vcxproj -> C:\Users\spide\Desktop\dungeoncrawler\x64\Debug\Dante's Crypt.exe

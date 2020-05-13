@@ -23,7 +23,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/7cougar7/Desktop/dungeoncrawler/out/build/x64-Debug"
+			"value" : "c:/Users/spide/Desktop/dungeoncrawler/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -499,7 +499,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/7cougar7/Desktop/dungeoncrawler"
+			"value" : "C:/Users/spide/Desktop/dungeoncrawler"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -511,7 +511,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/7cougar7/Desktop/dungeoncrawler/out/install/x64-Debug"
+			"value" : "C:/Users/spide/Desktop/dungeoncrawler/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1035,7 +1035,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/7cougar7/Desktop/dungeoncrawler/out/build/x64-Debug"
+			"value" : "C:/Users/spide/Desktop/dungeoncrawler/out/build/x64-Debug"
 		},
 		{
 			"name" : "dungeoncrawler_SOURCE_DIR",
@@ -1047,7 +1047,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/7cougar7/Desktop/dungeoncrawler"
+			"value" : "C:/Users/spide/Desktop/dungeoncrawler"
 		}
 	],
 	"kind" : "cache",

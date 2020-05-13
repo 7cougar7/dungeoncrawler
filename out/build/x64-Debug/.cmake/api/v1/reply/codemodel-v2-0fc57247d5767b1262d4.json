@@ -16,7 +16,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -33,7 +34,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -42,8 +44,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "DungeonCrawler::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-DungeonCrawler-Debug-795af43f1211d2dfc81b.json",
+					"jsonFile" : "target-DungeonCrawler-Debug-be11646f71f58b77e4cf.json",
 					"name" : "DungeonCrawler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Engine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Engine-Debug-aee52c82bb2b6765d916.json",
+					"name" : "Engine",
 					"projectIndex" : 0
 				},
 				{
@@ -66,8 +75,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/7cougar7/Desktop/dungeoncrawler/out/build/x64-Debug",
-		"source" : "C:/Users/7cougar7/Desktop/dungeoncrawler"
+		"build" : "C:/Users/spide/Desktop/dungeoncrawler/out/build/x64-Debug",
+		"source" : "C:/Users/spide/Desktop/dungeoncrawler"
 	},
 	"version" : 
 	{
