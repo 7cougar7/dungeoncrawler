@@ -23,7 +23,7 @@ int createSquare(int size, int xCoord, int yCoord);
 int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness);
 int randBetween(int min, int max);
 void createRooms(int number, int minSize, int maxSize);
-void randomWalk(int startX, int startY, int steps, int trend);
+void randomWalk(int& x, int& y, int steps, int trend);
 void createLayout(int minSize, int maxSize);
 void connectRooms();
 int initLevel();

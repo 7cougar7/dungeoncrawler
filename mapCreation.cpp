@@ -104,10 +104,10 @@ void createRooms(int number, int minSize, int maxSize) {
     }
 }
 
-void randomWalk(int startX, int startY, int steps, int trend) {
-    levelLayout[startY][startX] = *path;
-    int x = startX;
-    int y = startY;
+void randomWalk(int& x, int& y, int steps, int trend) {
+    int startX = x;
+    int startY = y;
+    levelLayout[y][x] = *path;
     switch (trend) {
     case 0:
         for (int s = 0; s < steps; s++) {
@@ -182,7 +182,7 @@ void randomWalk(int startX, int startY, int steps, int trend) {
     }
 }
 
-
+//probably gonna get scrapped low key no cap
 void connectRooms() {
 
 }
@@ -190,12 +190,15 @@ void connectRooms() {
 void createLayout(int minSize, int maxSize) {
     //FIXME
     //create central room. Will put bottom left corner in center of map
-    int centralRoomSize = rand() % (maxSize - minSize) + minSize;
-    int hX = maxX / 2;
-    int hY = maxY / 2;
-    int minSteps = 20;
-    createSquare(centralRoomSize, hX - (centralRoomSize / 2) + 1, hY - (centralRoomSize / 2) + 1);
-    randomWalk(hX, hY, randBetween(minSteps, 2 * hX), rand() % 4);
+    int centralRoomSize = randBetween(minSize, maxSize);
+    int halfX = maxX / 2;
+    int halfY = maxY / 2;
+    int x = halfX;
+    int y = halfY;
+    int minSteps = 25;
+    createSquare(centralRoomSize, halfX - (centralRoomSize / 2) + 1, halfY - (centralRoomSize / 2) + 1);
+    randomWalk(x, y, randBetween(minSteps, 2 * halfX), rand() % 4);
+    createSquare(randBetween(minSize, maxSize), x, y);
 }
 
 int initLevel() {
@@ -209,7 +212,7 @@ int initLevel() {
     //randomWalk(50, 50, 80, 0);
     //randomWalk(50, 50, 80, 1);
     //randomWalk(25, 25, 80, 3);
-    createLayout(3, 7);
+    createLayout(3, 10);
     for (int x = maxY - 1; x >= 0; x--) {
         for (int y = 0; y < maxX; y++) {
             if (levelLayout[x][y].getSymbol() != '@') {
