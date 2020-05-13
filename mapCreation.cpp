@@ -2,11 +2,24 @@
 // Created by 7cougar7 on 5/11/2020.
 //
 
-#include "mapCreation.h"
+#include <iostream>
+#include <vector>
+#include <ctime>
+#include <cstdlib>
+#include <cmath>
+#include "Tile.h"
 
+const int possibleDirections[4][2] = {
+        {1,0},
+        {-1,0},
+        {0,1},
+        {0,-1}
+};
+const int maxX = 50;
+const int maxY = 50;
 Tile* path = new Tile('@', true, true, false, false, false, false, 1.0);
 
-std::vector<std::vector<Tile>> levelLayout(maxX, std::vector<Tile>(maxY));  //Outside Vector(x), Inside Vector(y)
+std::vector<std::vector<Tile>> levelLayout(maxX, std::vector<Tile>(maxY)); //Outside Vector(x), Inside Vector(y)
 
 //Size = length of each side
 //xCoord/yCoord = bottom left corner coordinates
@@ -26,7 +39,7 @@ int createSquare(int size, int xCoord, int yCoord) {
     return 1;
 }
 
-int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness) {
+int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness = 1) {
     if (xStart > maxX || yStart > maxY || xEnd > maxX || yEnd > maxY
         || xStart < 0 || yStart < 0 || xEnd < 0 || yEnd < 0) {
         return 1;
@@ -80,10 +93,17 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness) {
     return 0;
 }
 
-//trend of 0: up and left
-//1: up and right
-//2: down and left
-//3: down and up
+int randBetween(int min, int max) {
+    return rand() % (max - min) + min;
+}
+void createRooms(int number, int minSize, int maxSize) {
+    int i = 0;
+    while (i < number) {
+        createSquare(randBetween(minSize, maxSize), rand() % maxX, rand() % maxY);
+        i++;
+    }
+}
+
 void randomWalk(int startX, int startY, int steps, int trend) {
     levelLayout[startY][startX] = *path;
     int x = startX;
@@ -92,7 +112,7 @@ void randomWalk(int startX, int startY, int steps, int trend) {
     case 0:
         for (int s = 0; s < steps; s++) {
             int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
-            if (r == 0) { //move right  
+            if (r == 0) { //move right
                 levelLayout[y][x++] = *path;
             } //move left
             else if (r == 1) {
@@ -109,7 +129,7 @@ void randomWalk(int startX, int startY, int steps, int trend) {
     case 1:
         for (int s = 0; s < steps; s++) {
             int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
-            if (r == 0) { 
+            if (r == 0) {
                 levelLayout[y][x--] = *path;
             }
             else if (r == 1) {
@@ -126,16 +146,16 @@ void randomWalk(int startX, int startY, int steps, int trend) {
     case 2:
         for (int s = 0; s < steps; s++) {
             int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
-            if (r == 0) { 
+            if (r == 0) {
                 levelLayout[y][x++] = *path;
-            } 
+            }
             else if (r == 1) {
                 levelLayout[y][x--] = *path;
             }
-            else if (r == 2) { 
+            else if (r == 2) {
                 levelLayout[y--][x] = *path;
             }
-            else { 
+            else {
                 levelLayout[y++][x] = *path;
             }
         }
@@ -143,16 +163,16 @@ void randomWalk(int startX, int startY, int steps, int trend) {
     case 3:
         for (int s = 0; s < steps; s++) {
             int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
-            if (r == 0) { 
+            if (r == 0) {
                 levelLayout[y][x--] = *path;
-            } 
+            }
             else if (r == 1) {
                 levelLayout[y][x++] = *path;
             }
-            else if (r == 2) { 
+            else if (r == 2) {
                 levelLayout[y--][x] = *path;
             }
-            else { 
+            else {
                 levelLayout[y++][x] = *path;
             }
         }
@@ -162,40 +182,41 @@ void randomWalk(int startX, int startY, int steps, int trend) {
     }
 }
 
-void createRooms(int number, int minSize, int maxSize) {
-    int i = 0;
-    while (i < number) {
-        createSquare(rand() % (maxSize - minSize) + minSize, rand() % maxX, rand() % maxY);
-        i++;
-    }
-}
-
-//create central room, random walks to create rooms, add dead ends
-void createLayout() {
-    //FIXME
-}
-
 
 void connectRooms() {
-    //FIXME
+
 }
 
-int initLevel() {
+void createLayout(int minSize, int maxSize) {
+    //FIXME
+    //create central room. Will put bottom left corner in center of map
+    int centralRoomSize = rand() % (maxSize - minSize) + minSize;
+    int hX = maxX / 2;
+    int hY = maxY / 2;
+    int minSteps = 20;
+    createSquare(centralRoomSize, hX - (centralRoomSize / 2) + 1, hY - (centralRoomSize / 2) + 1);
+    randomWalk(hX, hY, randBetween(minSteps, 2 * hX), rand() % 4);
+}
+
+int main() {
     srand(time(NULL));
     //createSquare(8,20,10);
     //while(1) {
     //createRooms(5, 3, 7);
-    //createLine(24, 5, 12, 28, 3);
+    //createLine(24,5,12,28, 3);
     //createLine(12, 2, 12, 9, 1);
-    //createLine(2, 3, 8, 3, 1);
-    randomWalk(25, 25, 15);
+    //createLine(2, 3, 8, 3);
+    //randomWalk(50, 50, 80, 0);
+    //randomWalk(50, 50, 80, 1);
+    //randomWalk(25, 25, 80, 3);
+    createLayout(3, 7);
     for (int x = maxY - 1; x >= 0; x--) {
         for (int y = 0; y < maxX; y++) {
             if (levelLayout[x][y].getSymbol() != '@') {
-                std::cout << "x";
+                std::cout << ". ";
             }
             else {
-                std::cout << levelLayout[x][y].getSymbol();
+                std::cout << levelLayout[x][y].getSymbol() << " ";
             }
         }
         std::cout << "\n";

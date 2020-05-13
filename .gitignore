@@ -1,9 +1,5 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/Dante's Crypt/.vs/Dante's Crypt/v16/Browse.VC.opendb
-**/.vs
-**/x64
-**/Debug
-**/out
+﻿/Dante's Crypt/.vs/Dante's Crypt/v16/Browse.VC.opendb
+**/.vs/
+**/x64/
+**/Debug/
+**/out/
