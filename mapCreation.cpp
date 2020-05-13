@@ -2,24 +2,11 @@
 // Created by 7cougar7 on 5/11/2020.
 //
 
-#include <iostream>
-#include <vector>
-#include <ctime>
-#include <cstdlib>
-#include <cmath>
-#include "Tile.h"
+#include "mapCreation.h"
 
-const int possibleDirections[4][2] = {
-        {1,0},
-        {-1,0},
-        {0,1},
-        {0,-1}
-};
-const int maxX = 50;
-const int maxY = 50;
 Tile* path = new Tile('@', true, true, false, false, false, false, 1.0);
 
-std::vector<std::vector<Tile>> levelLayout(maxX, std::vector<Tile>(maxY)); //Outside Vector(x), Inside Vector(y)
+std::vector<std::vector<Tile>> levelLayout(maxX, std::vector<Tile>(maxY));  //Outside Vector(x), Inside Vector(y)
 
 //Size = length of each side
 //xCoord/yCoord = bottom left corner coordinates
@@ -39,7 +26,7 @@ int createSquare(int size, int xCoord, int yCoord) {
     return 1;
 }
 
-int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness = 1) {
+int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness) {
     if (xStart > maxX || yStart > maxY || xEnd > maxX || yEnd > maxY
         || xStart < 0 || yStart < 0 || xEnd < 0 || yEnd < 0) {
         return 1;
@@ -106,14 +93,14 @@ void connectRooms() {
     //FIXME
 }
 
-int main() {
+int initLevel() {
     srand(time(NULL));
     //createSquare(8,20,10);
     //while(1) {
     //createRooms(5, 3, 7);
     createLine(24, 5, 12, 28, 3);
     createLine(12, 2, 12, 9, 1);
-    createLine(2, 3, 8, 3);
+    createLine(2, 3, 8, 3, 1);
     for (int x = maxY - 1; x >= 0; x--) {
         for (int y = 0; y < maxX; y++) {
             if (levelLayout[x][y].getSymbol() != '@') {
