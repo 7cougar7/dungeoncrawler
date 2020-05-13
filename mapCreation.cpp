@@ -80,24 +80,85 @@ int createLine(int xStart, int yStart, int xEnd, int yEnd, int thickness) {
     return 0;
 }
 
-void randomWalk(int startX, int startY, int steps) {
+//trend of 0: up and left
+//1: up and right
+//2: down and left
+//3: down and up
+void randomWalk(int startX, int startY, int steps, int trend) {
     levelLayout[startY][startX] = *path;
     int x = startX;
     int y = startY;
-    for (int s = 0; s < steps; s++) {
-        int r = rand() % 4;
-        if (r == 0) { //move right
-            levelLayout[y][x++] = *path;
-        } //move left
-        else if (r == 1) {
-            levelLayout[y][x--] = *path;
+    switch (trend) {
+    case 0:
+        for (int s = 0; s < steps; s++) {
+            int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
+            if (r == 0) { //move right  
+                levelLayout[y][x++] = *path;
+            } //move left
+            else if (r == 1) {
+                levelLayout[y][x--] = *path;
+            }
+            else if (r == 2) { //move up
+                levelLayout[y++][x] = *path;
+            }
+            else { //move down
+                levelLayout[y--][x] = *path;
+            }
         }
-        else if (r == 2) { //move up
-            levelLayout[y++][x] = *path;
+        break;
+    case 1:
+        for (int s = 0; s < steps; s++) {
+            int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
+            if (r == 0) { 
+                levelLayout[y][x--] = *path;
+            }
+            else if (r == 1) {
+                levelLayout[y][x++] = *path;
+            }
+            else if (r == 2) {
+                levelLayout[y++][x] = *path;
+            }
+            else {
+                levelLayout[y--][x] = *path;
+            }
         }
-        else { //move down
-            levelLayout[y--][x] = *path;
+        break;
+    case 2:
+        for (int s = 0; s < steps; s++) {
+            int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
+            if (r == 0) { 
+                levelLayout[y][x++] = *path;
+            } 
+            else if (r == 1) {
+                levelLayout[y][x--] = *path;
+            }
+            else if (r == 2) { 
+                levelLayout[y--][x] = *path;
+            }
+            else { 
+                levelLayout[y++][x] = *path;
+            }
         }
+        break;
+    case 3:
+        for (int s = 0; s < steps; s++) {
+            int r = (rand() % 2) + (rand() % 2) + (rand() % 2); //1/8 chance to be 0 and 3. 3/8 chance to be 1 and 2.
+            if (r == 0) { 
+                levelLayout[y][x--] = *path;
+            } 
+            else if (r == 1) {
+                levelLayout[y][x++] = *path;
+            }
+            else if (r == 2) { 
+                levelLayout[y--][x] = *path;
+            }
+            else { 
+                levelLayout[y++][x] = *path;
+            }
+        }
+        break;
+    default:
+        randomWalk(startX, startY, steps, 0);
     }
 }
 
