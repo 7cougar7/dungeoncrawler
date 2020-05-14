@@ -155,34 +155,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Components.h" />
     <ClInclude Include="Consumables.h" />
     <ClInclude Include="Dante%27s Crypt.h" />
+    <ClInclude Include="ECS.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="KeyboardController.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="mapCreation.h" />
+    <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dante%27s Crypt.cpp" />
     <ClCompile Include="Consumables.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="mapCreation.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Dante%27s Crypt.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\Documents\bruh\DirtTileSprite.png" />
+    <Image Include="..\..\Documents\bruh\FireSpiritSprite.png" />
+    <Image Include="..\..\Documents\bruh\GrassTileSprite.png" />
+    <Image Include="..\..\Documents\bruh\logo1.png" />
+    <Image Include="..\..\Documents\bruh\player.png" />
+    <Image Include="..\..\Documents\bruh\StoneTileSprite.png" />
+    <Image Include="..\..\Documents\bruh\WaterTileSprite.png" />
     <Image Include="Dante%27s Crypt.ico" />
     <Image Include="small.ico" />
   </ItemGroup>

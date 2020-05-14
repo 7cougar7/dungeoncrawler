@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\ECS">
+      <UniqueIdentifier>{c47b50ee-fb36-4388-81bf-444440443e57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -45,8 +48,32 @@
     <ClInclude Include="mapCreation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="TextureManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardController.h">
+      <Filter>Header Files\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,7 +104,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -91,6 +127,27 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Dante%27s Crypt.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\logo1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\FireSpiritSprite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\GrassTileSprite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\DirtTileSprite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\StoneTileSprite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\WaterTileSprite.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\Documents\bruh\player.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
