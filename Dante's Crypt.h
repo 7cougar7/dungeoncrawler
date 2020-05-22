@@ -5,13 +5,15 @@
 #include "SDL_image.h"
 #include <stdio.h>
 #include <iostream>
+#include <vector>
+
+class ColliderComponent;
 
 class Game {
 
 private:
 	bool isRunning;
 	SDL_Window* window;
-	//SDL_Renderer* renderer;
 	int cnt = 0;
 
 
@@ -28,7 +30,9 @@ public:
 
 	bool running() { return isRunning; }
 
+	static void AddTile(int id, int x, int y);
 	static SDL_Renderer* renderer;
 	static SDL_Event event;
+	static std::vector<ColliderComponent*> colliders;
 
 };

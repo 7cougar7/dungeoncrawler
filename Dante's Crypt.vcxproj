@@ -155,6 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ColliderComponent.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Components.h" />
     <ClInclude Include="Consumables.h" />
     <ClInclude Include="Dante%27s Crypt.h" />
@@ -166,6 +168,7 @@
     <ClInclude Include="KeyboardController.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="mapCreation.h" />
+    <ClInclude Include="TileComponent.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SpriteComponent.h" />
@@ -176,8 +179,10 @@
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Dante%27s Crypt.cpp" />
     <ClCompile Include="Consumables.cpp" />
+    <ClCompile Include="ECS.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -201,8 +206,13 @@
     <Image Include="..\..\Documents\bruh\player.png" />
     <Image Include="..\..\Documents\bruh\StoneTileSprite.png" />
     <Image Include="..\..\Documents\bruh\WaterTileSprite.png" />
+    <Image Include="AngelWalk.png" />
     <Image Include="Dante%27s Crypt.ico" />
+    <Image Include="Guy1-2.png" />
     <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="pixel16x16.map" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

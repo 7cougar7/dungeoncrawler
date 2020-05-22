@@ -75,6 +75,15 @@
     <ClInclude Include="KeyboardController.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="ColliderComponent.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileComponent.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dante%27s Crypt.cpp">
@@ -116,6 +125,12 @@
     <ClCompile Include="Vector2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS.cpp">
+      <Filter>Header Files\ECS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Dante%27s Crypt.rc">
@@ -150,5 +165,16 @@
     <Image Include="..\..\Documents\bruh\player.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Guy1-2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="AngelWalk.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="pixel16x16.map">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

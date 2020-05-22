@@ -7,6 +7,7 @@ https://www.youtube.com/channel/UCAM9ZPgEIdeHAsmG50wqL1g
 
 #include "Components.h"
 #include "SDL.h"
+#include "TextureManager.h"
 
 class SpriteComponent : public Component
 {
@@ -15,13 +16,27 @@ private:
 	SDL_Texture* texture;
 	SDL_Rect srcRect, destRect;
 
+	bool animated = false;
+	int frames = 0;
+	int speed = 100;
+
 public:
 	SpriteComponent() = default;
 	SpriteComponent(const char* path)
 	{
 		setTex(path);
 	}
-
+	SpriteComponent(const char* path, int nFrames, int mSpeed)
+	{
+		animated = true;
+		frames = nFrames;
+		speed = mSpeed;
+		setTex(path);
+	}
+	~SpriteComponent()
+	{
+		SDL_DestroyTexture(texture);
+	}
 	void setTex(const char* path)
 	{
 		texture = TextureManager::LoadTexture(path);
@@ -32,14 +47,21 @@ public:
 		transform = &entity->getComponent<TransformComponent>();
 
 		srcRect.x = srcRect.y = 0;
-		srcRect.w = srcRect.h = 32;
-		destRect.w = destRect.h = 64;
+		srcRect.w = transform->width;
+		srcRect.h = transform->height;
 	}
 
 	void update() override
 	{
+		if (animated)
+		{
+			srcRect.x = srcRect.w * static_cast<int>((SDL_GetTicks() / speed) % frames);
+		}
+
 		destRect.x = (int)transform->position.x;
 		destRect.y = (int)transform->position.y;
+		destRect.w = transform->width * transform->scale;
+		destRect.h = transform->height * transform->scale;
 	}
 
 	void draw() override
